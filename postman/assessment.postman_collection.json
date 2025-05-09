@@ -1,0 +1,2491 @@
+{
+	"info": {
+		"_postman_id": "5ff5115f-5f82-4067-af18-529bda2a2c9b",
+		"name": "Task Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44778312",
+		"_collection_link": "https://yu-5387176.postman.co/workspace/yu's-Workspace~04b5cbc4-b759-432c-8248-978aa2d088e1/collection/44778312-5ff5115f-5f82-4067-af18-529bda2a2c9b?action=share&source=collection_link&creator=44778312"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/auth/register",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/auth/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c9-iKk8w9RDFZ3DgzvIBEsK1wvU8VM\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "186.760ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:20:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWRhY2JkOTVmY2U0ODgyZDM0ZjkyMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ2Nzc1MjI5LCJleHAiOjE3NDY3Nzg4Mjl9.cmjGUcOBresVzaHFNkYlJF_NJO4tEUZ2x-58C9LnWe8\"\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"email\": \"xds\",\r\n    \"password\": \"{{$randomPassword}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/auth/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "121"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"79-ro7m74/EZGzzQWLzoT055Ngnm1s\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "1.482ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:22:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"xds\",\n            \"msg\": \"Please provide a valid email address\",\n            \"path\": \"email\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "409",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"email\": \"Virgie51@yahoo.com\",\r\n    \"password\": \"6O1sXUekyNc4TTi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/auth/register",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-iGErLku/9taeeOQN+9qwFgLXnuo\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "44.733ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:25:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User already exists\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Virgie51@yahoo.com\",\r\n    \"password\": \"6O1sXUekyNc4TTi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/auth/login",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"Virgie51@yahoo.com\",\r\n    \"password\": \"6O1sXUekyNc4TTi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/auth/login",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c9-vEzwN0F4p4s6dkON4212h4SiMqc\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "107.887ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:23:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWRhY2JkOTVmY2U0ODgyZDM0ZjkyMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ2Nzc1Mzg3LCJleHAiOjE3NDY3Nzg5ODd9.tQ9gzrFWKrcGNjKNJsrHOdXgw7_aEVytj040JVV2NeQ\"\n}"
+						},
+						{
+							"name": "401",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"Virgie51@yahoo.com\",\r\n    \"password\": \"6O1sXUekyNc4TTx\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/auth/login",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-dBEoW0UmTF+EGUMaprEp9/8zNNA\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "123.508ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:24:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Invalid credentials\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{localLogout}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/auth/logout",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/auth/logout",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-71uUsMgZY3FdZp9j1h5YMrBIOgg\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "81.764ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:27:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logged out successfully\"\n}"
+						},
+						{
+							"name": "401 (already logged out)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/auth/logout",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-jkUsnrFeivh35XNC5dy2/v1Ya3s\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "40.309ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:27:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Token expired or invalidated\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{localUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"status\": \"pending\",\r\n    \"dueDate\": \"2025/05/30\"\r\n}\r\n    // \"assignedTo\": \"mongoUserId\" if not exist in json, set default to current logged user",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/tasks",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"status\": \"in-progress\",\r\n    \"dueDate\": \"2025/05/30\"\r\n}\r\n// \"assignedTo\": \"mongoUserId\" if not exist in json, set default to current logged user",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fb-ozHwgJDbp/g95QrBSvuRlGTsfJs\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "176.682ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:31:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"681daf5df1eda425344aadc8\",\n    \"title\": \"Awesome Frozen Pizza\",\n    \"status\": \"in-progress\",\n    \"dueDate\": \"2025-05-29T17:00:00.000Z\",\n    \"assignedTo\": \"681dacbd95fce4882d34f921\",\n    \"createdAt\": \"2025-05-09T07:31:41.204Z\",\n    \"updatedAt\": \"2025-05-09T07:31:41.204Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"status\": \"pend\",\r\n    \"dueDate\": \"2025/05/30\"\r\n}\r\n// \"assignedTo\": \"mongoUserId\" if not exist in json, set default to current logged user",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "136"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"88-QSle/xUgV4hto5zlLv19p+IfGxU\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "41.075ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:32:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"pend\",\n            \"msg\": \"Status must be one of: pending, in-progress, done\",\n            \"path\": \"status\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "401 (Not logged in)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"status\": \"pending\",\r\n    \"dueDate\": \"2025/05/30\"\r\n}\r\n    // \"assignedTo\": \"mongoUserId\" if not exist in json, set default to current logged user",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-hptDGgvEsj4G9BowIxRncOGOQj0\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "0.261ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:40:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not authorized\"\n}"
+						},
+						{
+							"name": "401 (Logged Out)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-jkUsnrFeivh35XNC5dy2/v1Ya3s\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "39.799ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:52:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Token expired or invalidated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{localUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/tasks",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "done",
+									"disabled": true
+								},
+								{
+									"key": "dueDate",
+									"value": "2025/05/08",
+									"disabled": true
+								},
+								{
+									"key": "user",
+									"value": "681ca66488d925d2989812bc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/tasks",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "done",
+											"disabled": true
+										},
+										{
+											"key": "dueDate",
+											"value": "2025/05/08",
+											"disabled": true
+										},
+										{
+											"key": "user",
+											"value": "681ca66488d925d2989812bc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "753"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f1-W/SOZUj4FU60tcb+hdlWfhwiHf8\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "161.586ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:32:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"681daf5df1eda425344aadc8\",\n        \"title\": \"Awesome Frozen Pizza\",\n        \"status\": \"in-progress\",\n        \"dueDate\": \"2025-05-29T17:00:00.000Z\",\n        \"assignedTo\": \"681dacbd95fce4882d34f921\",\n        \"createdAt\": \"2025-05-09T07:31:41.204Z\",\n        \"updatedAt\": \"2025-05-09T07:31:41.204Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"681daf7af1eda425344aadcb\",\n        \"title\": \"Licensed Wooden Table\",\n        \"status\": \"done\",\n        \"dueDate\": \"2025-05-29T17:00:00.000Z\",\n        \"assignedTo\": \"681dacbd95fce4882d34f921\",\n        \"createdAt\": \"2025-05-09T07:32:10.156Z\",\n        \"updatedAt\": \"2025-05-09T07:32:10.156Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"681daf83f1eda425344aadce\",\n        \"title\": \"Handcrafted Concrete Shirt\",\n        \"status\": \"pending\",\n        \"dueDate\": \"2025-05-29T17:00:00.000Z\",\n        \"assignedTo\": \"681dacbd95fce4882d34f921\",\n        \"createdAt\": \"2025-05-09T07:32:19.714Z\",\n        \"updatedAt\": \"2025-05-09T07:32:19.714Z\",\n        \"__v\": 0\n    }\n]"
+						},
+						{
+							"name": "200 (filter)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/tasks?status=done",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "done"
+										},
+										{
+											"key": "dueDate",
+											"value": "2025/05/08",
+											"disabled": true
+										},
+										{
+											"key": "user",
+											"value": "681ca66488d925d2989812bc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f7-usIFSKcHQ2/Y6uN8nMQIphfrBzE\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "161.088ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:42:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"681daf7af1eda425344aadcb\",\n        \"title\": \"Licensed Wooden Table\",\n        \"status\": \"done\",\n        \"dueDate\": \"2025-05-29T17:00:00.000Z\",\n        \"assignedTo\": \"681dacbd95fce4882d34f921\",\n        \"createdAt\": \"2025-05-09T07:32:10.156Z\",\n        \"updatedAt\": \"2025-05-09T07:32:10.156Z\",\n        \"__v\": 0\n    }\n]"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/tasks?status=dones",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "dones"
+										},
+										{
+											"key": "dueDate",
+											"value": "2025/05/08",
+											"disabled": true
+										},
+										{
+											"key": "user",
+											"value": "681ca66488d925d2989812bc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "138"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8a-3U+EmgYCFEO2vM0CSL2a/4Xp1TM\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "40.290ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:33:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"dones\",\n            \"msg\": \"Status must be one of: pending, in-progress, done\",\n            \"path\": \"status\",\n            \"location\": \"query\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "401 (Not logged in)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/tasks",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "done",
+											"disabled": true
+										},
+										{
+											"key": "dueDate",
+											"value": "2025/05/08",
+											"disabled": true
+										},
+										{
+											"key": "user",
+											"value": "681ca66488d925d2989812bc",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-hptDGgvEsj4G9BowIxRncOGOQj0\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "0.438ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:42:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not authorized\"\n}"
+						},
+						{
+							"name": "401 (Logged Out)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"status\": \"pending\",\r\n    \"dueDate\": \"2025/05/30\"\r\n}\r\n    // \"assignedTo\": \"mongoUserId\" if not exist in json, set default to current logged user",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-jkUsnrFeivh35XNC5dy2/v1Ya3s\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "39.799ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:52:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Token expired or invalidated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{localUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/tasks/681daf5df1eda425344aadc8",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"681daf5df1eda425344aadc8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681daf5df1eda425344aadc8",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681daf5df1eda425344aadc8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fb-ozHwgJDbp/g95QrBSvuRlGTsfJs\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "83.094ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:34:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"681daf5df1eda425344aadc8\",\n    \"title\": \"Awesome Frozen Pizza\",\n    \"status\": \"in-progress\",\n    \"dueDate\": \"2025-05-29T17:00:00.000Z\",\n    \"assignedTo\": \"681dacbd95fce4882d34f921\",\n    \"createdAt\": \"2025-05-09T07:31:41.204Z\",\n    \"updatedAt\": \"2025-05-09T07:31:41.204Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}api/tasks/681c972ce0d26858d16da832",
+									"host": [
+										"{{localhost}}api"
+									],
+									"path": [
+										"tasks",
+										"681c972ce0d26858d16da832"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "119"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"77-/xuZxei8XjIn4jxFEbY7WNNjrOU\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "82.192ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:34:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"681c972ce0d26858d16da832\",\n            \"msg\": \"Task not found\",\n            \"path\": \"id\",\n            \"location\": \"params\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks/6x",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"6x"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6e-OWHVDv29rRxjOpTfDAys9iZgt58\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "40.664ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:34:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"6x\",\n            \"msg\": \"Id must be a valid ObjectId\",\n            \"path\": \"id\",\n            \"location\": \"params\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "401 (Not logged in)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681daf5df1eda425344aadc8",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681daf5df1eda425344aadc8"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-hptDGgvEsj4G9BowIxRncOGOQj0\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "0.302ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:43:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not authorized\"\n}"
+						},
+						{
+							"name": "401 (Logged Out)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681daf5df1eda425344aadc8",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681daf5df1eda425344aadc8"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-jkUsnrFeivh35XNC5dy2/v1Ya3s\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "39.799ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:52:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Token expired or invalidated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{localUser}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"status\": \"pending\",\r\n    \"dueDate\": \"2025/05/30\"\r\n}\r\n// \"assignedTo\": \"mongoUserId\" if not exist in json, set default to current logged user",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost}}/api/tasks/681daf5df1eda425344aadc8",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"681daf5df1eda425344aadc8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"status\": \"pending\",\r\n    \"dueDate\": \"2025/05/30\"\r\n}\r\n// \"assignedTo\": \"mongoUserId\" if not exist in json, set default to current logged user",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681daf5df1eda425344aadc8",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681daf5df1eda425344aadc8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f4-/Vv7AVedT/WgBbJ2+zN9CsAD05w\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "126.080ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:40:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"681daf5df1eda425344aadc8\",\n    \"title\": \"Tasty Fresh Bacon\",\n    \"status\": \"pending\",\n    \"dueDate\": \"2025-05-29T17:00:00.000Z\",\n    \"assignedTo\": \"681dacbd95fce4882d34f921\",\n    \"createdAt\": \"2025-05-09T07:31:41.204Z\",\n    \"updatedAt\": \"2025-05-09T07:40:12.566Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"status\": \"pending\",\r\n    \"dueDate\": \"2025/05/30\"\r\n}\r\n// \"assignedTo\": \"mongoUserId\" if not exist in json, set default to current logged user",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681c972ce0d26858d16da831",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681c972ce0d26858d16da831"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "119"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"77-rvo76QkKfbett0MZHmQzTz+cDio\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "84.538ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:35:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"681c972ce0d26858d16da831\",\n            \"msg\": \"Task not found\",\n            \"path\": \"id\",\n            \"location\": \"params\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "401 (Not logged in)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"{{$randomProductName}}\",\r\n    \"status\": \"pending\",\r\n    \"dueDate\": \"2025/05/30\"\r\n}\r\n// \"assignedTo\": \"mongoUserId\" if not exist in json, set default to current logged user",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681daf5df1eda425344aadc8",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681daf5df1eda425344aadc8"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-hptDGgvEsj4G9BowIxRncOGOQj0\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "0.278ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:43:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not authorized\"\n}"
+						},
+						{
+							"name": "401 (Logged Out) Copy",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681daf5df1eda425344aadc8",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681daf5df1eda425344aadc8"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-jkUsnrFeivh35XNC5dy2/v1Ya3s\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "39.799ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:52:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Token expired or invalidated\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{localAdmin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localhost}}/api/tasks/681db13bf1eda425344aadd6",
+							"host": [
+								"{{localhost}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								"681db13bf1eda425344aadd6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681db13bf1eda425344aadd6",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681db13bf1eda425344aadd6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f4-YS6qMhrp7aMtsjm2jxeUFmtfs/w\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "126.028ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:50:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"681db13bf1eda425344aadd6\",\n    \"title\": \"Tasty Steel Shoes\",\n    \"status\": \"pending\",\n    \"dueDate\": \"2025-05-29T17:00:00.000Z\",\n    \"assignedTo\": \"681dacbd95fce4882d34f921\",\n    \"createdAt\": \"2025-05-09T07:39:39.179Z\",\n    \"updatedAt\": \"2025-05-09T07:39:39.179Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/tasks/xd",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"xd"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6e-aRGRpGT7oqzAkyloDRM7HrtNmkg\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "40.546ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:49:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"xd\",\n            \"msg\": \"Id must be a valid ObjectId\",\n            \"path\": \"id\",\n            \"location\": \"params\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "404",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681c972ce0d26858d16da832",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681c972ce0d26858d16da832"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "119"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"77-/xuZxei8XjIn4jxFEbY7WNNjrOU\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "85.111ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:49:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"681c972ce0d26858d16da832\",\n            \"msg\": \"Task not found\",\n            \"path\": \"id\",\n            \"location\": \"params\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "401 (Not logged in)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681c972ce0d26858d16da832",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681c972ce0d26858d16da832"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-hptDGgvEsj4G9BowIxRncOGOQj0\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "0.351ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:45:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Not authorized\"\n}"
+						},
+						{
+							"name": "401 (User Role)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681c972ce0d26858d16da832",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681c972ce0d26858d16da832"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-D3/TZ+j0RWo1Xp6m8ppUCiJCRBE\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "41.804ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:44:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User not authorized\"\n}"
+						},
+						{
+							"name": "401 (Logged Out)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{localhost}}/api/tasks/681daf5df1eda425344aadc8",
+									"host": [
+										"{{localhost}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										"681daf5df1eda425344aadc8"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-jkUsnrFeivh35XNC5dy2/v1Ya3s\""
+								},
+								{
+									"key": "X-Response-Time",
+									"value": "39.799ms"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 07:52:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Token expired or invalidated\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "localUser",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWRhY2JkOTVmY2U0ODgyZDM0ZjkyMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ2Nzc1MjI5LCJleHAiOjE3NDY3Nzg4Mjl9.cmjGUcOBresVzaHFNkYlJF_NJO4tEUZ2x-58C9LnWe8",
+			"type": "string"
+		},
+		{
+			"key": "localLogout",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWRhY2JkOTVmY2U0ODgyZDM0ZjkyMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ2Nzc1NjgxLCJleHAiOjE3NDY3NzkyODF9.Nqpyg2kEqEIvPgCFeZ8nPI_0i__M57B2CPYI8RPHO1I",
+			"type": "string"
+		},
+		{
+			"key": "localAdmin",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWRiMmZiZjFlZGE0MjUzNDRhYWRkZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Njc3NjkxMSwiZXhwIjoxNzQ2NzgwNTExfQ.q2d6Dp-dXe5HiTBc84zNrJloDzH5D7OCoLeqD62LXUs",
+			"type": "default"
+		},
+		{
+			"key": "localLoggetOut",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWRhY2JkOTVmY2U0ODgyZDM0ZjkyMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ2Nzc3MDg1LCJleHAiOjE3NDY3ODA2ODV9.CnP2LCq8jsmsu07CsipzYWpawQoxszvK4u-eOJS-oFs",
+			"type": "default"
+		}
+	]
+}

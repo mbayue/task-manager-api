@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "name": "Megan Bartell",
+            "email": "Virgie51@yahoo.com",
+            "password": "6O1sXUekyNc4TTi",
+            "role": "user"
+        },
+        {
+            "name": "Courtney Labadie",
+            "email": "Rolando.Kuvalis@hotmail.com",
+            "password": "EOftJuGlwKWQX0K",
+            "role": "admin"
+        }
+    ]
+}
