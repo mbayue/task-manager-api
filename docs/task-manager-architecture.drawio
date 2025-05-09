@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.3">
+  <diagram name="Task Manager Architecture" id="h1O5uGqYsmPx3v6Fv7DZ">
+    <mxGraphModel dx="1426" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Client" style="shape=rectangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="164" y="50" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Controllers" style="shape=rectangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="44" y="270" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Middlewares" style="shape=rectangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="164" y="270" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Services" style="shape=rectangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="284" y="270" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="MongoDB" style="shape=cylinder;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="44" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="JWT/Auth" style="shape=rectangle;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="164" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Redis Cache" style="shape=cylinder;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="284" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="10" style="endArrow=block;" parent="1" source="2" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" style="endArrow=block;" parent="1" source="3" target="4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="12" style="endArrow=block;" parent="1" source="3" target="5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="13" style="endArrow=block;" parent="1" source="3" target="6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" style="endArrow=block;" parent="1" source="4" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15" style="endArrow=block;" parent="1" source="5" target="8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="16" style="endArrow=block;" parent="1" source="6" target="9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Docker Container" style="shape=swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="14" y="120" width="400" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Express Server" style="shape=rectangle;whiteSpace=wrap;html=1;" parent="17" vertex="1">
+          <mxGeometry x="130" y="60" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XrTfE_nl8kRQwUcQH5Rr-17" value="High-Level Architecture Diagram" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="114" y="10" width="200" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
