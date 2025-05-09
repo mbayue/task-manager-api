@@ -16,6 +16,9 @@ app.use(morgan('combined'));
 app.get('/', (_req, res) => {
   res.send('Ok!');
 });
+app.get('/api', (_req, res) => {
+  res.send('Please use /api/auth or /api/tasks');
+})
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 
