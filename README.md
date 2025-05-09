@@ -10,8 +10,8 @@ A task management backend built with **Node.js**, **Express**, **MongoDB**, **Ty
 - Role-based Authorization (`admin`, `user`)
 - Task CRUD operations
 - Task filtering by status and due date
+- Request input validation
 - Caching with Redis for task listing
-- Mongoose validation and relationships
 - Containerized with Docker
 - Unit Testing with Jest, Supertest
 
@@ -33,12 +33,12 @@ A task management backend built with **Node.js**, **Express**, **MongoDB**, **Ty
 The project is structured as follows:
 - **`app.ts`**: Sets up Express app, middleware, and routes.
 - **`server.ts`**: Starts the server, connects to MongoDB/Redis.
-- **`config/`**: Contains configuration for external services like MongoDB and Redis.
+- **`config/`**: Contains configuration for database service.
 - **`controllers/`**: Functions that process requests and interact with services/models.
-- **`middlewares/`**: Contains middleware for authentication, error handling, and input validation.
+- **`middlewares/`**: Contains middleware for authentication and error handling.
 - **`models/`**: Mongoose schema definitions for collections like `User` and `Task`.
 - **`routes/`**: Maps endpoints to controller methods.
-- **`services/`**: Handles core logic like token generation, password hashing, etc.
+- **`services/`**: Contains configuration for cache service.
 - **`utils/`**: General-purpose utility functions used across the project.
 - **`tests/`**: Test files organized by feature or layer.
 
@@ -122,7 +122,7 @@ npm run test
 
 ## 📄 Postman Collection
 Included in /docs folder. Import task-manager.postman_collection.json into Postman.
-It also contains aarchitecture diagaram and sample data for live demo.
+It also contains architecture diagram and sample data for live demo.
 
 ---
 
