@@ -128,6 +128,6 @@ It also contains architecture diagram and sample data for live demo.
 
 ## 🌍 Live Demo
 
-You can access the live demo at [https://task-manager-ayq1.onrender.com/](https://task-manager-ayq1.onrender.com/)
+You can access the live demo at [https://task-manager-1-c53m.onrender.com](https://task-manager-1-c53m.onrender.com)
 
 ---
