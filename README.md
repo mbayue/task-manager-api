@@ -30,17 +30,17 @@ A task management backend built with **Node.js**, **Express**, **MongoDB**, **Ty
 
 ## 📁 Project Structure
 
-src/
-├── app.ts # Express app setup
-├── server.ts # Entry point
-├── config/ # MongoDB and Redis configs
-├── controllers/ # Business logic
-├── middlewares/ # Auth, validation, error handling
-├── models/ # Mongoose schemas for User & Task
-├── routes/ # Route definitions
-├── services/ # JWT/token utilities
-├── utils/ # Helper functions
-└── tests/ # Unit and integration tests
+The project is structured as follows:
+- **`app.ts`**: Sets up Express app, middleware, and routes.
+- **`server.ts`**: Starts the server, connects to MongoDB/Redis.
+- **`config/`**: Contains configuration for external services like MongoDB and Redis.
+- **`controllers/`**: Functions that process requests and interact with services/models.
+- **`middlewares/`**: Contains middleware for authentication, error handling, and input validation.
+- **`models/`**: Mongoose schema definitions for collections like `User` and `Task`.
+- **`routes/`**: Maps endpoints to controller methods.
+- **`services/`**: Handles core logic like token generation, password hashing, etc.
+- **`utils/`**: General-purpose utility functions used across the project.
+- **`tests/`**: Test files organized by feature or layer.
 
 ---
 
