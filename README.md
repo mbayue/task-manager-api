@@ -48,7 +48,7 @@ The project is structured as follows:
 
 ### 1. **Clone Repo**
    ```bash
-   git clone https://github.com/bayue48/task-manager.git
+   git clone https://github.com/mbayue/task-manager.git
    cd task-manager
    ```
 
